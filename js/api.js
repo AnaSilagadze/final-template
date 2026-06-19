@@ -1,15 +1,64 @@
-const BASE_URL = ''; // შეცვალე შენი API-ს base URL-ით
+const localFlowersData = [
+    {
+        id: 1,
+        common_name: " Red Rose",
+        cycle: "Perennial",
+        default_image: {
+            regular_url: "assets/rose.jpg"
+        }
+    },
+    {
+        id: 2,
+        common_name: "Yellow Tulip",
+        cycle: "Perennial",
+        default_image: {
+            regular_url: "assets/tulip.jpg"
+        }
+    },
+    {
+        id: 3,
+        common_name: "Sunflower",
+        cycle: "Annual",
+        default_image: {
+            regular_url: "assets/sunflower.jpg"
+        }
+    },
+    {
+        id: 4,
+        common_name: "Lavender",
+        cycle: "Perennial",
+        default_image: {
+            regular_url: "assets/lavender.jpg"
+        }
+    },
+    {
+        id: 5,
+        common_name: "White Daisy",
+        cycle: "Perennial",
+        default_image: {
+            regular_url: "assets/daisy.jpg"
+        }
+    },
+    {
+        id: 6,
+        common_name: "Pink Orchid",
+        cycle: "Perennial",
+        default_image: {
+            regular_url: "assets/orchids.jpg"
+        }
+    }
+];
 
-export async function fetchData(endpoint) {
-  // fetch, შეამოწმე response.ok, დააბრუნე response.json()
-}
+async function fetchFlowersData() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const simulateError = false; 
 
-// localStorage-ის დამხმარე ფუნქციები — იმპორტი გაარ სადაც ჩანაწერები გჭირდება
-export function getSaved() {
-  const raw = localStorage.getItem('savedItems');
-  return raw ? JSON.parse(raw) : [];
-}
-
-export function setSaved(items) {
-  localStorage.setItem('savedItems', JSON.stringify(items));
+            if (simulateError) {
+                reject(new Error("Could not connect to the database."));
+            } else {
+                resolve(localFlowersData);
+            }
+        }, 1000); 
+    });
 }
