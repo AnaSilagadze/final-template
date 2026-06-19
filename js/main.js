@@ -1,5 +1,3 @@
-import { fetchFlowersData } from './api.js';
-
 let appState = {
     flowers: [],
     savedSeeds: JSON.parse(localStorage.getItem('savedSeeds')) || []

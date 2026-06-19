@@ -49,7 +49,7 @@ const localFlowersData = [
     }
 ];
 
-export async function fetchFlowersData() {
+async function fetchFlowersData() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             const simulateError = false; 

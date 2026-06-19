@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FloraSeeds - Main</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">🌸 FloraSeeds</div>
+        <nav class="main-nav">
+            <a href="index.html" class="nav-link active">Main</a>
+            <a href="shop.html" class="nav-link">Seed Shop</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero-section">
+            <h1>Discover beautiful flowers!</h1>
+            <p>Explore various species and purchase their best seeds.</p>
+        </section>
+
+        <section class="flowers-section">
+            <h2>Popular Flowers</h2>
+            
+            <div id="loading-spinner" class="spinner">Loading flower catalog...</div>
+            
+            <div id="error-message" class="error-box hidden"></div>
+
+            <div id="flowers-grid" class="grid-container"></div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 FloraSeeds. All rights reserved.</p>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
