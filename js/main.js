@@ -125,4 +125,37 @@ function renderSavedPage() {
     });
 }
 
+function handleContactForm() {
+    const form = document.getElementById('contact-form');
+    const feedback = document.getElementById('form-feedback');
+    const usernameInput = document.getElementById('username');
+    const selectEl = document.getElementById('flower-select');
+
+    usernameInput.addEventListener('input', () => {
+        if (usernameInput.value.length < 3) {
+            usernameInput.style.borderColor = 'red';
+        } else {
+            usernameInput.style.borderColor = 'green';
+        }
+    });
+
+    selectEl.addEventListener('change', (e) => {
+        console.log(`User selected: ${e.target.value}`);
+    });
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault(); 
+
+        if (!form.checkValidity()) {
+            feedback.textContent = "Please fill out all fields correctly!";
+            feedback.className = "feedback-box error";
+            return;
+        }
+
+        feedback.textContent = `Thank you, ${usernameInput.value}! Your message has been sent successfully.`;
+        feedback.className = "feedback-box success";
+        form.reset(); 
+        usernameInput.style.borderColor = '#ccc';
+    });
+}
 
